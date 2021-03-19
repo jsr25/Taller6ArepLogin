@@ -6,14 +6,16 @@
     <title>hello</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js"></script>
 </head>
 
 <body>
     <div id="contenedor">
-        <label>Usuario</label>
-        <input class="input" type="text" placeholder="Usuario"></input>
-        <label>Contraseña</label>
-        <input class="input" type="password" placeholder="contraseña">
+        <label id="labeluser">Usuario</label>
+        <input id="usuario" class="input" type="text" placeholder="Usuario"></input>
+        <label id="labelpass">Contraseña</label>
+        <input id="password" class="input" type="password" placeholder="contraseña">
+        <button id="butonlogin" onclick="app.login()">Login</button>
 
     </div>
 </body>
