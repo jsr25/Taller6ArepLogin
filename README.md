@@ -38,13 +38,19 @@ De esta manera genera las imágenes docker correctamente, recuerde que los nombr
 las imágenes deben ser diferentes
 
 ## Imagenes Docker
-Puede obtener las imágenes del proyecto ejecutando los siguientes comandos
+Puede obtener las imágenes del proyecto ejecutando los siguientes dockerhub:
+* https://hub.docker.com/repository/docker/juansramos/securelogin
+* https://hub.docker.com/repository/docker/juansramos/secureapi
+Podemos descargar las imangenes con los siguientes comandos:
+*docker pull juansramos/secureapi
+*docker pull juansramos/securelogin
 
 
 ## Video
 https://www.youtube.com/watch?v=ALH2o-YpCvU&ab_channel=JuanRamos
 
 ## Arquitectura
+![](./img/Arquitectura.png)
 
 ## Javadoc
 La documentación se encuentra en el directorio apidocs dentro el directorio Robin y LogService, para generar una nueva documentación
