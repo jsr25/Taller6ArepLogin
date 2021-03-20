@@ -44,13 +44,15 @@ const app = (function () {
         let numa = $("#numa").val();
         let numb = $("#numb").val();
         let ope = $("#oper").val();
+        console.log("que se dice entro")
         if (ope == "div" && numb == "0") {
-            alert("mi chino eso esta mal")
+                alert("Division con 0 no es valida")
         }
         else {
             const promise2 = $.get({
-                url: "/opera/" + numa + "/" + numb + "/" + ope,
+                url: "/opera/"+numa+"/"+numb+"/"+ope,
                 contentType: "application/json",
+
             });
             promise2.then((data) => {
                 console.log(data)
@@ -69,11 +71,16 @@ const app = (function () {
     }
 
 
+
+
+
+
     return {
 
         login: login,
         opreacionCalc: opreacionCalc,
-        calc: calc
+        calc: calc,
+
     }
 
 

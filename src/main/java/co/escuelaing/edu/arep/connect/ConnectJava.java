@@ -14,7 +14,7 @@ public class ConnectJava {
     public Integer connect(String numa, String numb, String ope){
         System.setProperty("javax.net.ssl.trustStore", "keystores/trusStoreApi");
         System.setProperty("javax.net.ssl.trustStorePassword", "123456");
-        String https_url = "https://localhost:5000/"+ope;
+        String https_url = "https://localhost:35000/"+ope;
         URL url;
         try {
             url = new URL(https_url);

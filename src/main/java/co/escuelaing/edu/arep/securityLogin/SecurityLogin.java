@@ -12,8 +12,29 @@ public class SecurityLogin {
         secure("keystores/ecikeystore.p12", "123456", "keystores/trusStoreApi", "123456");
         port(getPort());
         staticFiles.location("/staticfiles");
-        init();
 
+        options("/",
+                (request, response) -> {
+
+                    String accessControlRequestHeaders = request
+                            .headers("Access-Control-Request-Headers");
+                    if (accessControlRequestHeaders != null) {
+                        response.header("Access-Control-Allow-Headers",
+                                accessControlRequestHeaders);
+                    }
+
+                    String accessControlRequestMethod = request
+                            .headers("Access-Control-Request-Method");
+                    if (accessControlRequestMethod != null) {
+                        response.header("Access-Control-Allow-Methods",
+                                accessControlRequestMethod);
+                    }
+
+                    return "OK";
+                });
+
+        before((request, response) -> response.header("Access-Control-Allow-Origin", ""));
+        init();
         get("/opera/:numa/:numb/:ope",(req,res)->{
             ConnectJava connectJava= new ConnectJava();
             return connectJava.connect(req.params(":numa"),req.params(":numb"),req.params(":ope"));
@@ -38,7 +59,7 @@ public class SecurityLogin {
         if(System.getenv("PORT")!=null){
             return Integer.parseInt(System.getenv("PORT"));
         }
-        return 35000;
+        return 34000;
     }
 
 
