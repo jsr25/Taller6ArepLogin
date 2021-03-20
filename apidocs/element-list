@@ -1,0 +1,8 @@
+co.escuelaing.edu.arep.authenticate
+co.escuelaing.edu.arep.authenticate.impl
+co.escuelaing.edu.arep.connect
+co.escuelaing.edu.arep.persistence
+co.escuelaing.edu.arep.persistence.impl
+co.escuelaing.edu.arep.security
+co.escuelaing.edu.arep.security.impl
+co.escuelaing.edu.arep.securityLogin

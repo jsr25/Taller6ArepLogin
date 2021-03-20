@@ -11,6 +11,14 @@ import java.util.List;
 
 public class ConnectJava {
 
+    /**
+     * Metodo que realiza la conexion con el api y obtiene una respuesta
+     * al enviar un json
+     * @param numa primer numero ingresado
+     * @param numb segundo numero ingresado
+     * @param ope operacion realizada
+     * @return resultado del a operacion sobre los dos numeros
+     */
     public Integer connect(String numa, String numb, String ope){
         System.setProperty("javax.net.ssl.trustStore", "keystores/trusStoreApi");
         System.setProperty("javax.net.ssl.trustStorePassword", "123456");
@@ -34,8 +42,6 @@ public class ConnectJava {
             Integer result = getResult(con);
             return result;
 
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -43,7 +49,11 @@ public class ConnectJava {
     }
 
 
-
+    /**
+     * Metodo con el que se obtiene el resultado que llega despues de realizar la peticion
+     * @param con connecion http creada
+     * @return valor que trae la peticion en el body
+     */
     private Integer getResult(HttpsURLConnection con){
         if(con!=null){
             try {

@@ -28,6 +28,7 @@ public class AuthenticateImpl implements Authenticate {
 
     }
 
+    @Override
     public boolean comprobar(){
         PersistenceLocalImpl persistenceLocal= new PersistenceLocalImpl();
         if(persistenceLocal.contenuser(user)){

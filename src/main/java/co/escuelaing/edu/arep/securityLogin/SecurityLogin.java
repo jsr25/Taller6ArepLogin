@@ -8,14 +8,12 @@ import static spark.Spark.*;
 
 public class SecurityLogin {
     public static void main(String[] args) {
-        //API: secure(keystoreFilePath, keystorePassword, truststoreFilePath, truststorePassword);
         secure("keystores/ecikeystore.p12", "123456", "keystores/trusStoreApi", "123456");
         port(getPort());
         staticFiles.location("/staticfiles");
 
         options("/",
                 (request, response) -> {
-
                     String accessControlRequestHeaders = request
                             .headers("Access-Control-Request-Headers");
                     if (accessControlRequestHeaders != null) {
@@ -55,6 +53,10 @@ public class SecurityLogin {
         });
     }
 
+    /**
+     * Metodo para obtener el puerto que se va a usar en la aplicacion
+     * @return numero que indica el puerto
+     */
     public static int getPort(){
         if(System.getenv("PORT")!=null){
             return Integer.parseInt(System.getenv("PORT"));
